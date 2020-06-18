@@ -18,6 +18,7 @@ Plugin 'tpope/vim-commentary' " gc to comment out
 Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0 " make ctrlp work from current dir
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'luochen1990/rainbow'
@@ -29,7 +30,18 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'fatih/vim-go' " golang development 
 Plugin 'jamesroutley/vim-logbook'
 Plugin 'sheerun/vim-polyglot'   " syntax highlighting in most languages
-Plugin 'joshdick/onedark.vim'   " Atom-style dark theme
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'valloric/youcompleteme'
+Plugin 'preservim/nerdcommenter'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'elzr/vim-json'
+Plugin 'sainnhe/gruvbox-material'
+Plugin 'doums/darcula'
+Plugin 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview=1
+" Enable folding with the spacebar
+nnoremap <space> za
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -39,16 +51,22 @@ filetype plugin indent on
 " Pretty things
 " --------------------------------
 syntax on
-colorscheme onedark
+colorscheme darcula
+
 
 " Set Airline bar theme
-let g:airline_theme='bubblegum'
+let g:airline_theme = 'gruvbox_material'
+let g:gruvbox_material_background = 'soft'
 
 "rainbow Plugin Options (luochen1990/rainbow)
 let g:rainbow_active = 1    " 0 if you want to enable it later via :RainbowToggle
 
 " Colour at column 80
 set colorcolumn=80
+
+"Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " --------------------------------
 " Basic stuff
